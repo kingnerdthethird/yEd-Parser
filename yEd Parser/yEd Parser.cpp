@@ -26,6 +26,7 @@ void CreateNewPipe(string true_id, string label);
 vector<Node *> master_node_list;
 vector<Pipe *> master_pipe_list;
 
+void FindZones();
 void FindParents();
 void FindChildren();
 
@@ -34,8 +35,8 @@ void EndFile();
 
 int main(){
 	time_t now = time(0);
-	char* dt = ctime(&now);
-	tm *gmtm = gmtime(&now);
+	char * dt = ctime(&now);
+	tm * gmtm = gmtime(&now);
 	dt = asctime(gmtm);
 
 
@@ -104,7 +105,6 @@ int main(){
 
 	output.close();
 	file.close();
-
 	system("PAUSE");
     return 0;
 }
@@ -166,3 +166,21 @@ bool CheckLine(string line) {
 		return false;
 	}
 }
+
+void CreateNewGroup(string true_id, string label) {
+	Blower * temp_blower;
+	temp_blower = new Blower(true_id, label);
+	master_node_list.push_back(temp_blower);
+}
+
+void CreateNewStation(string true_id, string label){}
+void CreateNewDiverter(string true_id, string label){}
+void CreateNewLab(string true_id, string label){}
+void CreateNewLinearCoupler(string true_id, string label){}
+void CreateNewPipe(string true_id, string label){}
+
+void FindParents(){}
+void FindChildren(){}
+
+void SetUpFile(){}
+void EndFile(){}

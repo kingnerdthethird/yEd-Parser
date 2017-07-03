@@ -1,2 +1,11 @@
 ﻿  yEd Parser.cpp
-c:\users\ashsp\onedrive\transvac 2017\yed parser\yed parser\yed parser.cpp(9): fatal error C1083: Cannot open include file: 'Entry.h': No such file or directory
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(49): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(38): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(475): note: see declaration of 'ctime'
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(39): warning C4996: 'gmtime': This function or variable may be unsafe. Consider using gmtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(495): note: see declaration of 'gmtime'
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(40): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(116): note: see declaration of 'asctime'
+  yEd Parser.vcxproj -> C:\Users\Ashsp\OneDrive\TransVac 2017\yEd-Parser\Debug\yEd Parser.exe
+  yEd Parser.vcxproj -> C:\Users\Ashsp\OneDrive\TransVac 2017\yEd-Parser\Debug\yEd Parser.pdb (Partial PDB)
