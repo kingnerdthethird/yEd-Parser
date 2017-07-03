@@ -10,12 +10,14 @@
 #include <ctime>
 using namespace std;
 
-class Node {
+class Node{
 private:
 	string FindTrueID(string);
 	string FindNodeLabel(string);
 
 protected:
+	string name;
+	string type;
 	string true_id;
 	string nodenum;
 	string ip_address;
@@ -50,6 +52,8 @@ public:
 	void SetChildren(string);
 	void SetEverything();
 
+	string PrintName();
+	string PrintType();
 	string PrintNodeNum();
 	string PrintIPAddress();
 	string PrintDefault();

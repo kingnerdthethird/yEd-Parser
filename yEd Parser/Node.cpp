@@ -62,9 +62,18 @@ Node::~Node(){
 
 }
 
-void Node::SetAttributes(){}
-void Node::SetNodeNum(){}
-void Node::SetIPAddress(){}
+void Node::SetAttributes(){
+	//I don't think this is needed.
+}
+
+void Node::SetNodeNum(){
+	nodenum = "0";
+}
+
+void Node::SetIPAddress(){
+	ip_address = "0.0.0.0";
+}
+
 void Node::SetDefault(string){}
 void Node::SetLocation(string){}
 void Node::SetZone(int){}
@@ -73,16 +82,122 @@ void Node::SetStateChangeTime(){}
 void Node::SetChildren(string){}
 void Node::SetEverything(){}
 
-string Node::PrintNodeNum() { return NULL; }
-string Node::PrintIPAddress(){ return NULL; }
-string Node::PrintDefault(){ return NULL; }
-string Node::PrintLocation(){ return NULL; }
-string Node::PrintZone(){ return NULL; }
-string Node::PrintParentNodeNum(){ return NULL; }
-string Node::PrintParentDistance(){ return NULL; }
-string Node::PrintStateChangeTime(){ return NULL; }
-string Node::PrintChildren(){ return NULL; }
-string Node::PrintEverything(){ return NULL; }
+string Node::PrintName() {
+	return "\t\t<NAME>" + name + "</NAME>\n";
+}
+
+string Node::PrintType() {
+	return "\t\t<TYPE>" + type + "</TYPE>\n";
+}
+
+string Node::PrintNodeNum() {
+	return "\t\t<NODENUM>" + nodenum + "</NODENUM>\n";
+}
+
+string Node::PrintIPAddress(){
+	return "\t\t<IPADDR>" + ip_address + "</IPADDR>\n";
+}
+
+string Node::PrintDefault(){ 
+	if (nodenum.compare(default_variable) == 0) {
+		return "\t\t<DEFAULT>" + default_variable + "</DEFAULT>\n";
+	}
+
+	else {
+		return "";
+	}
+}
+
+string Node::PrintLocation(){
+	if (has_location) {
+		return "\t\t<LOCATION>" + location + "</LOCATION>\n";
+	}
+
+	else {
+		return "";
+	}
+}
+
+string Node::PrintZone(){
+	if (has_zone) {
+		return "\t\t<ZONE>" + zone + "</ZONE>\n";
+	}
+
+	else {
+		return "";
+	}
+}
+
+string Node::PrintParentNodeNum(){
+	if (has_parent) {
+		return "\t\t<PARENT>" + parent_nodenum + "</PARENT>\n";
+	}
+
+	else {
+		return "";
+	}
+}
+
+string Node::PrintParentDistance(){
+	if (has_parent) {
+		return "\t\t<DISTANCE>" + parent_distance + "</PARENT>\n";
+	}
+
+	else {
+		return "";
+	}
+}
+
+string Node::PrintStateChangeTime(){
+	return "\t\t<STATECHANGETIME>" + state_change_time + "</STATECHANGETIME>\n";
+}
+
+string Node::PrintChildren(){
+	string output;
+	if (has_children) {
+		for (int i = 0; i < children.size(); i++) {
+			stringstream converter;
+			string portnum;
+			converter << i + 1;
+			portnum = converter.str();
+
+			output += "\t\t<CHILDREN>\n";
+			output += "\t\t\t<NODENUM>";
+			output += children[i];
+			output += "</NODENUM>\n";
+			output += "\t\t\t<PORTNUM>";
+			output += portnum;
+			output += "</PORTNUM>\n";
+			output += "\t\t</CHILDREN>\n";
+		}
+
+		return output;
+	}
+
+	else {
+		return "";
+	}
+}
+
+string Node::PrintEverything(){
+	string output;
+
+	output += "\t<NODE>\n";
+	output += PrintName();
+	output += PrintDefault();
+	output += PrintNodeNum();
+	output += PrintIPAddress();
+	output += PrintLocation();
+	output += PrintType();
+	output += PrintZone();
+	output += PrintParentNodeNum();
+	output += PrintParentDistance();
+	output += PrintStateChangeTime();
+	output += PrintChildren();
+	output += "\t</NODE>\n";
+
+	return output;
+}
 
 string Node::ReturnNodeNum(){ return NULL; }
 string Node::ReturnIPAddress(){ return NULL; }
