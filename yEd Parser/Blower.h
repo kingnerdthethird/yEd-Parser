@@ -17,6 +17,7 @@ private:
 	string FindZoneName(string);
 
 	string blower_id;
+
 public:
 	Blower(string line_one, string line_two);
 	~Blower();

@@ -75,7 +75,11 @@ void Node::SetIPAddress(){
 }
 
 void Node::SetDefault(string){}
-void Node::SetLocation(string){}
+void Node::SetLocation(string){
+	has_location = true;
+	location = "Default";
+}
+
 void Node::SetZone(int){}
 void Node::SetParent(string, string){}
 void Node::SetStateChangeTime(){}
@@ -199,19 +203,58 @@ string Node::PrintEverything(){
 	return output;
 }
 
-string Node::ReturnNodeNum(){ return NULL; }
-string Node::ReturnIPAddress(){ return NULL; }
-string Node::ReturnDefault(){ return NULL; }
-string Node::ReturnLocation(){ return NULL; }
-string Node::ReturnLayer(){ return NULL; }
-string Node::ReturnZone(){ return NULL; }
-string Node::ReturnParentNodeNum(){ return NULL; }
-string Node::ReturnParentDistance(){ return NULL; }
-string Node::ReturnStateChangeTime(){ return NULL; }
+string Node::ReturnNodeNum(){
+	return nodenum; 
+}
 
-vector<string> Node::ReturnChildren() { vector<string> temp; return temp; }
+string Node::ReturnIPAddress() { 
+	return ip_address;
+}
 
-bool Node::ReturnHasParent() { return 0; }
-bool Node::ReturnHasChildren(){ return 0; }
-bool Node::ReturnHasLocation(){ return 0; }
-bool Node::ReturnHasZone(){ return 0; }
+string Node::ReturnDefault(){ 
+	return default_variable;
+}
+
+string Node::ReturnLocation(){ 
+	return location;
+}
+
+string Node::ReturnLayer(){ 
+	return layer;
+}
+
+string Node::ReturnZone(){ 
+	return zone;
+}
+
+string Node::ReturnParentNodeNum(){ 
+	return parent_nodenum;
+}
+
+string Node::ReturnParentDistance(){ 
+	return parent_distance;
+}
+
+string Node::ReturnStateChangeTime(){ 
+	return state_change_time;
+}
+
+vector<string> Node::ReturnChildren() { 
+	vector<string> temp; return temp;
+}
+
+bool Node::ReturnHasParent() { 
+	return has_parent;
+}
+
+bool Node::ReturnHasChildren(){ 
+	return has_children;
+}
+
+bool Node::ReturnHasLocation(){ 
+	return has_location;
+}
+
+bool Node::ReturnHasZone(){ 
+	return has_zone;
+}

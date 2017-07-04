@@ -14,6 +14,9 @@
 #include "LinearCoupler.h"
 using namespace std;
 
+ifstream file;
+ofstream output;
+
 bool CheckLine(string line);
 
 void CreateNewGroup(string true_id, string label);
@@ -40,9 +43,7 @@ int main(){
 	dt = asctime(gmtm);
 
 
-	ifstream file;
 	file.open("Calgary Cancer Center.graphml");
-	ofstream output;
 	stringstream converter;
 	converter << dt;
 	string temp_name = converter.str();
@@ -182,5 +183,21 @@ void CreateNewPipe(string true_id, string label){}
 void FindParents(){}
 void FindChildren(){}
 
-void SetUpFile(){}
+void SetUpFile(){
+	if (output.is_open()) {
+		output << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << endl;
+		output << "<CONFIG>" << endl;
+		output << "\t<STATIONNODENUM>" << 0 << "</STATIONNODENUM>" << endl;
+		output << "\t<VELOCITY>" << 0 << "</VELOCITY>" << endl;
+		output << "\t<TIMESCALE>" << 0 << "</TIMESCALE>" << endl;
+		output << "\t<NODE>" << endl;
+		output << "\t\t<NAME>Master</NAME>" << endl;
+		output << "\t\t<NODENUM>0</NODENUM>" << endl;
+		output << "\t\t<IPADDR>0.0.0.0</IPADDR>" << endl;
+		output << "\t\t<LOCATION>Master</LOCATION>" << endl;
+		output << "\t\t<ZONE>0</ZONE>" << endl;
+		output << "\t\t<PARENT>0</PARENT>" << endl;
+		output << "\t</NODE>" << endl;
+	}
+}
 void EndFile(){}
