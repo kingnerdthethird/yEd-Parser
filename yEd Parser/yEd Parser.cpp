@@ -200,12 +200,29 @@ void CreateNewLinearCoupler(string true_id, string label){
 
 void CreateNewPipe(string true_id, string label){
 	Pipe * pipe;
-	pipe = new Pipe();
+	pipe = new Pipe(true_id, label);
 	master_pipe_list.push_back(pipe);
 }
 
-void FindParents(){}
-void FindChildren(){}
+void FindParents(){
+	for (int i = 0; i < master_pipe_list.size(); i++) {
+		for (int j = 0; j < master_node_list.size(); j++) {
+			if (master_pipe_list[i]->ReturnSourceID() == master_node_list[j]->ReturnTrueID()) {
+				master_node_list[j]->SetChildren(master_pipe_list[i]->ReturnTargetNodenum());
+			}
+		}
+	}
+}
+
+void FindChildren(){
+	for (int i = 0; i < master_pipe_list.size(); i++) {
+		for (int j = 0; j < master_node_list.size(); j++) {
+			if (master_pipe_list[i]->ReturnTargetID() == master_node_list[j]->ReturnTrueID()) {
+				master_node_list[j]->SetParent(master_pipe_list[i]->ReturnSourceNodenum(), master_pipe_list[i]->ReturnLength());
+			}
+		}
+	}
+}
 
 void SetUpFile(){
 	if (output.is_open()) {
@@ -224,6 +241,7 @@ void SetUpFile(){
 		output << "\t</NODE>" << endl;
 	}
 }
+
 void EndFile(){
 	output << "</CONFIG>" << endl;
 }

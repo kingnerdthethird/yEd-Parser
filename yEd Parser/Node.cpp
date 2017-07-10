@@ -80,11 +80,26 @@ void Node::SetLocation(string){
 	location = "Default";
 }
 
-void Node::SetZone(int){}
-void Node::SetParent(string, string){}
-void Node::SetStateChangeTime(){}
-void Node::SetChildren(string){}
-void Node::SetEverything(){}
+void Node::SetZone(int number){
+	zone = number;
+}
+
+void Node::SetParent(string input_nodenum, string input_distance){
+	parent_nodenum = input_nodenum;
+	parent_distance = input_distance;
+}
+
+void Node::SetStateChangeTime(){
+	state_change_time = "0";
+}
+
+void Node::SetChildren(string input_nodenum){
+	children.push_back(input_nodenum);
+}
+
+void Node::SetEverything(){
+	
+}
 
 string Node::PrintName() {
 	return "\t\t<NAME>" + name + "</NAME>\n";
@@ -201,6 +216,10 @@ string Node::PrintEverything(){
 	output += "\t</NODE>\n";
 
 	return output;
+}
+
+string Node::ReturnTrueID() {
+	return true_id;
 }
 
 string Node::ReturnNodeNum(){

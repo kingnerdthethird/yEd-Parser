@@ -65,6 +65,7 @@ public:
 	string PrintChildren();
 	string PrintEverything();
 
+	string ReturnTrueID();
 	string ReturnNodeNum();
 	string ReturnIPAddress();
 	string ReturnDefault();
