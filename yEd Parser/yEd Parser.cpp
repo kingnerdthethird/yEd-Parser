@@ -169,16 +169,40 @@ bool CheckLine(string line) {
 }
 
 void CreateNewGroup(string true_id, string label) {
-	Blower * temp_blower;
-	temp_blower = new Blower(true_id, label);
-	master_node_list.push_back(temp_blower);
+	Blower * blower;
+	blower = new Blower(true_id, label);
+	master_node_list.push_back(blower);
 }
 
-void CreateNewStation(string true_id, string label){}
-void CreateNewDiverter(string true_id, string label){}
-void CreateNewLab(string true_id, string label){}
-void CreateNewLinearCoupler(string true_id, string label){}
-void CreateNewPipe(string true_id, string label){}
+void CreateNewStation(string true_id, string label){
+	Device * station;
+	station = new Device();
+	master_node_list.push_back(station);
+}
+
+void CreateNewDiverter(string true_id, string label){
+	Diverter * diverter;
+	diverter = new Diverter();
+	master_node_list.push_back(diverter);
+}
+
+void CreateNewLab(string true_id, string label){
+	Device * lab;
+	lab = new Device();
+	master_node_list.push_back(lab);
+}
+
+void CreateNewLinearCoupler(string true_id, string label){
+	LinearCoupler * linear_coupler;
+	linear_coupler = new LinearCoupler();
+	master_node_list.push_back(linear_coupler);
+}
+
+void CreateNewPipe(string true_id, string label){
+	Pipe * pipe;
+	pipe = new Pipe();
+	master_pipe_list.push_back(pipe);
+}
 
 void FindParents(){}
 void FindChildren(){}
@@ -200,4 +224,6 @@ void SetUpFile(){
 		output << "\t</NODE>" << endl;
 	}
 }
-void EndFile(){}
+void EndFile(){
+	output << "</CONFIG>" << endl;
+}
