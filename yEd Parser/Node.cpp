@@ -26,6 +26,7 @@ string Node::FindTrueID(string line) {
 			}
 		}
 	}
+	cout << "Node: " << temp << endl;
 	return temp;
 }
 
@@ -80,11 +81,12 @@ void Node::SetLocation(string){
 	location = "Default";
 }
 
-void Node::SetZone(int number){
+void Node::SetZone(string number){
 	zone = number;
 }
 
 void Node::SetParent(string input_nodenum, string input_distance){
+	has_parent = true;
 	parent_nodenum = input_nodenum;
 	parent_distance = input_distance;
 }
@@ -94,11 +96,12 @@ void Node::SetStateChangeTime(){
 }
 
 void Node::SetChildren(string input_nodenum){
+	has_children = true;
 	children.push_back(input_nodenum);
 }
 
 void Node::SetEverything(){
-	
+	SetNodeNum();
 }
 
 string Node::PrintName() {
@@ -218,6 +221,10 @@ string Node::PrintEverything(){
 	return output;
 }
 
+string Node::ReturnType() {
+	return type;
+}
+
 string Node::ReturnTrueID() {
 	return true_id;
 }
@@ -259,7 +266,7 @@ string Node::ReturnStateChangeTime(){
 }
 
 vector<string> Node::ReturnChildren() { 
-	vector<string> temp; return temp;
+	return children;
 }
 
 bool Node::ReturnHasParent() { 

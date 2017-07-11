@@ -21,6 +21,12 @@ private:
 public:
 	Blower(string line_one, string line_two);
 	~Blower();
+
+	void SetNodeNum();
+	void SetZone();
+	void SetName();
+
+	string ReturnBlowerID();
 };
 
 #endif

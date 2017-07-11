@@ -71,9 +71,9 @@ Pipe::Pipe(string edge_id, string edge_label){
 	SetTargetID(FindTarget(edge_id));
 	SetLength(FindLength(edge_label));
 
-	cout << source_id << endl;
-	cout << target_id << endl;
-	cout << length << endl;
+	//cout << source_id << endl;
+	//cout << target_id << endl;
+	//cout << length << endl;
 }
 
 Pipe::~Pipe(){

@@ -46,7 +46,7 @@ public:
 	void SetIPAddress();
 	void SetDefault(string);
 	void SetLocation(string);
-	void SetZone(int);
+	void SetZone(string);
 	void SetParent(string, string);
 	void SetStateChangeTime();
 	void SetChildren(string);
@@ -65,6 +65,7 @@ public:
 	string PrintChildren();
 	string PrintEverything();
 
+	string ReturnType();
 	string ReturnTrueID();
 	string ReturnNodeNum();
 	string ReturnIPAddress();

@@ -2,8 +2,9 @@
 #include "LinearCoupler.h"
 
 
-LinearCoupler::LinearCoupler()
-{
+LinearCoupler::LinearCoupler(){
+	nodenum = "Linear Coupler";
+	true_id = "n4";
 }
 
 
