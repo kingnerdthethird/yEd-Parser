@@ -2,8 +2,5 @@
 c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\pipe.cpp(12): warning C4018: '<': signed/unsigned mismatch
 c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\pipe.cpp(33): warning C4018: '<': signed/unsigned mismatch
 c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\pipe.cpp(53): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  yEd Parser.cpp
   yEd Parser.vcxproj -> C:\Users\Ashsp\OneDrive\TransVac 2017\yEd-Parser\Debug\yEd Parser.exe
   yEd Parser.vcxproj -> C:\Users\Ashsp\OneDrive\TransVac 2017\yEd-Parser\Debug\yEd Parser.pdb (Partial PDB)
