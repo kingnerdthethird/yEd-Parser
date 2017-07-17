@@ -116,9 +116,20 @@ int main(){
 	FindZones();
 	FindParents();
 	FindChildren();
+
 	ConnectBlowers();
 
-	PrintToFile();
+	for (int i = 0; i < master_node_list.size(); i++) {
+		if (master_node_list[i]->ReturnType() == "BLOWER") {
+			cout << master_node_list[i]->ReturnHasChildren() << endl;;
+		}
+	}
+	cout << "parent status" << endl;
+	for (int i = 0; i < master_node_list.size(); i++) {
+		if (master_node_list[i]->ReturnType() != "BLOWER") {
+			cout << master_node_list[i]->ReturnHasParent() << " " << master_node_list[i]->ReturnParentNodeNum() << endl;;
+		}
+	}	PrintToFile();
 	EndFile();
 
 	output.close();
@@ -199,7 +210,7 @@ void CreateNewStation(string true_id, string label){
 
 void CreateNewDiverter(string true_id, string label){
 	Diverter * diverter;
-	diverter = new Diverter();
+	diverter = new Diverter(true_id, label);
 	master_node_list.push_back(diverter);
 }
 
@@ -275,7 +286,7 @@ void FindChildren(){
 		for (int j = 0; j < master_node_list.size(); j++) {
 			if (master_pipe_list[i]->ReturnTargetID() == master_node_list[j]->ReturnTrueID()) {
 				master_node_list[j]->SetParent(master_pipe_list[i]->ReturnSourceNodenum(), master_pipe_list[i]->ReturnLength());
-				cout << master_node_list[j]->ReturnParentNodeNum() << endl;
+				//cout << master_node_list[j]->ReturnParentNodeNum() << endl;
 				//cout << "Parent Connected" << endl;
 			}
 		}
@@ -285,7 +296,17 @@ void FindChildren(){
 void ConnectBlowers() {
 	for (int i = 0; i < master_node_list.size(); i++) {
 		if (!master_node_list[i]->ReturnHasParent() && master_node_list[i]->ReturnType() != "BLOWER") {
-			master_node_list[i]->SetParent(master_node_list[i]->ReturnZone() + "0", "NULL");
+			master_node_list[i]->SetParent(master_node_list[i]->ReturnZone() + "00", "0");
+		}
+	}
+
+	for (int i = 0; i < master_node_list.size(); i++) {
+		for (int j = 0; j < master_node_list.size(); j++) {
+			if (master_node_list[i]->ReturnType() == "BLOWER") {
+				if (master_node_list[j]->ReturnParentNodeNum() == master_node_list[i]->ReturnNodeNum()) {
+					master_node_list[i]->SetChildren(master_node_list[j]->ReturnNodeNum());
+				}
+			}
 		}
 	}
 }

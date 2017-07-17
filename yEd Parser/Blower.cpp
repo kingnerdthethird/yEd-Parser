@@ -41,6 +41,8 @@ string Blower::FindZoneName(string line) {
 }
 
 Blower::Blower(string line_one, string line_two){
+	InitializeProperties();
+
 	true_id = FindTrueID(line_one);
 	blower_id = FindZoneName(line_two);
 	type = "BLOWER";
@@ -48,8 +50,8 @@ Blower::Blower(string line_one, string line_two){
 	SetZone();
 	SetNodeNum();
 	SetName();
-	SetIPAddress();
-	SetStateChangeTime();
+
+	SetEverything();
 }
 
 Blower::~Blower(){
@@ -57,11 +59,12 @@ Blower::~Blower(){
 }
 
 void Blower::SetNodeNum() {
-	nodenum = zone + "0";
+	nodenum = zone + "00";
 }
 
 void Blower::SetZone() {
 	string temp = blower_id;
+	has_zone = true;
 
 	if (temp.find("Zone ") != std::string::npos) {
 		temp.erase(temp.find("Zone "), 5);

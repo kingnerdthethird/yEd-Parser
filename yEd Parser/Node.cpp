@@ -63,8 +63,30 @@ Node::~Node(){
 
 }
 
-void Node::SetAttributes(){
-	//I don't think this is needed.
+void Node::InitializeProperties(){
+	name = "";
+	type = "";
+	true_id = "";
+	nodenum = "";
+	ip_address = "";
+	default_variable = "";
+	location = "";
+	layer = "";
+	zone = "";
+	parent_nodenum = "";
+	parent_distance = "";
+	state_change_time = "";
+
+	children.clear();
+
+	has_parent = false;
+	has_children = false;
+	has_location = false;
+	has_zone = false;
+}
+
+void Node::SetName() {
+	name = location + " " + type + " " + nodenum;
 }
 
 void Node::SetNodeNum(){
@@ -76,6 +98,7 @@ void Node::SetIPAddress(){
 }
 
 void Node::SetDefault(string){}
+
 void Node::SetLocation(string){
 	has_location = true;
 	location = "Default";
@@ -87,6 +110,9 @@ void Node::SetZone(string number){
 
 void Node::SetParent(string input_nodenum, string input_distance){
 	has_parent = true;
+	if (type == "BLOWER") {
+		cout << "blower has parent " << input_nodenum << endl;
+	}
 	parent_nodenum = input_nodenum;
 	parent_distance = input_distance;
 }
@@ -101,7 +127,10 @@ void Node::SetChildren(string input_nodenum){
 }
 
 void Node::SetEverything(){
-	SetNodeNum();
+	SetLocation("null");
+	SetName();
+	SetIPAddress();
+	SetStateChangeTime();
 }
 
 string Node::PrintName() {

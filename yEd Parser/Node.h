@@ -41,7 +41,8 @@ public:
 	Node();
 	~Node();
 
-	void SetAttributes();
+	void InitializeProperties();
+	void SetName();
 	void SetNodeNum();
 	void SetIPAddress();
 	void SetDefault(string);

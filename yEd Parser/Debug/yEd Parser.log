@@ -1,3 +1,27 @@
-﻿  LinearCoupler.cpp
+﻿  yEd Parser.cpp
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(55): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(79): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(122): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(128): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(46): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(475): note: see declaration of 'ctime'
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(47): warning C4996: 'gmtime': This function or variable may be unsafe. Consider using gmtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(495): note: see declaration of 'gmtime'
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(48): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(116): note: see declaration of 'asctime'
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(236): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(237): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(247): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(248): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(258): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(259): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(274): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(275): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(285): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(286): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(297): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(303): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(304): warning C4018: '<': signed/unsigned mismatch
+c:\users\ashsp\onedrive\transvac 2017\yed-parser\yed parser\yed parser.cpp(315): warning C4018: '<': signed/unsigned mismatch
   yEd Parser.vcxproj -> C:\Users\Ashsp\OneDrive\TransVac 2017\yEd-Parser\Debug\yEd Parser.exe
   yEd Parser.vcxproj -> C:\Users\Ashsp\OneDrive\TransVac 2017\yEd-Parser\Debug\yEd Parser.pdb (Partial PDB)

@@ -44,18 +44,16 @@ string Device::FindDeviceID(string line) {
 }
 
 Device::Device(string line_one, string line_two){
-	has_parent = false;
-	has_children = false;
+	InitializeProperties();
 
 	true_id = FindTrueID(line_one);
 	device_id = FindDeviceID(line_two);
 
-	type = "DEVICE";
+	type = "STATION";
 
 	SetNodeNum();
 
-	SetIPAddress();
-	SetStateChangeTime();
+	SetEverything();
 }
 
 
